@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.7",
-        "slim/php-view": "^2.2"
+        "slim/php-view": "^2.2",
+        "bryanjhv/slim-session": "^3.0"
     }
 }

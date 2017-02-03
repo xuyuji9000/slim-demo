@@ -1,36 +1,23 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-
-require("../vendor/autoload.php");
+require __DIR__ . "/../vendor/autoload.php";
 
 spl_autoload_register(function($classname) {
     require("../classes/".$classname.".php");
 });
 
-$config['displayErrorDetails'] = true;
-$config['addContentLengthHeader'] = false;
+// Configuration
+$settings = require __DIR__ . '/../src/settings.php';
+$app = new \Slim\App($settings);
 
-$config['db']['host']   = "localhost";
-$config['db']['user']   = "user";
-$config['db']['pass']   = "password";
-$config['db']['dbname'] = "exampleapp";
+// Register Middleware
+require __DIR__.'/../src/middleware.php';
 
-$app = new \Slim\App(["settings" => $config]);
 
-$container = $app->getContainer();
-$container['view'] = new \Slim\Views\PhpRenderer("../templates/");
+// Register Middleware
+require __DIR__.'/../src/dependencies.php';
 
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-   $name = $request->getAttribute('name');
-       $response->getBody()->write("Hello, $name");
 
-       return $response;
-});
-$app->get('/ticket', function (Request $request, Response $response) {
-    $tickets = array(2=>'two', 3=>'three');
-    //$response->getBody()->write(var_export($testArray));
-    $response = $this->view->render($response, "tickets.phtml", ["tickets"=>$tickets]);
-    return $response;
-});
+// Register Routes
+require __DIR__ . '/../src/routes.php';
+
 $app->run();

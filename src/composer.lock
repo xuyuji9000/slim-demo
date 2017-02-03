@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2c3e790dbcda4ee1ea37d0bbaa1c798",
+    "content-hash": "87f7953bad8e5629c2f8690c6597ef08",
     "packages": [
+        {
+            "name": "bryanjhv/slim-session",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bryanjhv/slim-session.git",
+                "reference": "ccc0c7e0a6d05188caeda859cf83fa7bc9dbb6a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/bryanjhv/slim-session/ccc0c7e0a6d05188caeda859cf83fa7bc9dbb6a8.zip",
+                "reference": "ccc0c7e0a6d05188caeda859cf83fa7bc9dbb6a8",
+                "shasum": ""
+            },
+            "require": {
+                "slim/slim": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bryan Horna",
+                    "email": "bryanjhv@gmail.com",
+                    "homepage": "https://bryanjhv.xyz",
+                    "role": "developer"
+                }
+            ],
+            "description": "Session middleware and helper for Slim framework 3.",
+            "homepage": "https://github.com/bryanjhv/slim-session",
+            "keywords": [
+                "helper",
+                "middleware",
+                "session",
+                "slim"
+            ],
+            "time": "2016-11-18T22:25:56+00:00"
+        },
         {
             "name": "container-interop/container-interop",
             "version": "1.1.0",
