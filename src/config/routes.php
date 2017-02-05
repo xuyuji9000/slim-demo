@@ -21,3 +21,4 @@ $app->get('/ticket', function (Request $request, Response $response) {
 });
 
 $app->get('/home', App\Controllers\HomeController::class.':home');
+$app->get('/file', App\Controllers\FileController::class.':home');
