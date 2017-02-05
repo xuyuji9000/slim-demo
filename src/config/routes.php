@@ -3,11 +3,6 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-// Controller __autoload() implementation
-spl_autoload_register(function($classname) {
-    require __DIR__ . "/../controller/".$classname.".php";
-});
-
 
 $app->get('/hello/{name}', function (Request $request, Response $response) {
    $name = $request->getAttribute('name');
@@ -25,4 +20,4 @@ $app->get('/ticket', function (Request $request, Response $response) {
     return $response;
 });
 
-$app->get('/home', HomeController::class.':home');
+$app->get('/home', App\Controllers\HomeController::class.':home');
