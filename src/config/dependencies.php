@@ -4,7 +4,9 @@
 $container = $app->getContainer();
 $container['view'] = new \Slim\Views\PhpRenderer("../templates/");
 $container['db'] = function($c) {
-    $pdo = new PDO("sqlite:../database/database.sqlite");
+    // sqlite 
+    if('sqlite' == $c['settings']['database'])
+        $pdo = new PDO("sqlite:../database/database.sqlite");
     return $pdo;
 };
 $container['session'] = function($c) {
