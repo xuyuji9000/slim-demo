@@ -13,7 +13,7 @@ class DatabaseFactory
                 break;
             }
             case 'sqlite': {
-                return new SqliteDatabase();
+                return new PDO("sqlite:../database/database.sqlite");
                 break;
             }
             default:

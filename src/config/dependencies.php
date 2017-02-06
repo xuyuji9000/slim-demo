@@ -2,13 +2,13 @@
 
 // Dependency Injection Container
 $container = $app->getContainer();
+
 $container['view'] = new \Slim\Views\PhpRenderer("../templates/");
+
 $container['db'] = function($c) {
-    // sqlite 
-    if('sqlite' == $c['settings']['database'])
-        $pdo = new PDO("sqlite:../database/database.sqlite");
-    return $pdo;
+    return DatabaseFactory::create($c['settings']['database']);
 };
+
 $container['session'] = function($c) {
     return new \SlimSession\Helper;
 };
