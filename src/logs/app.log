@@ -1,0 +1,5 @@
+[2017-02-07 08:34:48] slim_logger.INFO: Something interesting happened [] []
+[2017-02-07 10:10:44] slim_logger.INFO: Something interesting happened [] []
+[2017-02-07 10:11:02] slim_logger.INFO: Something interesting happened [] []
+[2017-02-07 10:11:46] slim_logger.INFO: Something interesting happened [] []
+[2017-02-07 10:12:27] slim_logger.ERROR: Something interesting happened [] []
