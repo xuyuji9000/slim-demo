@@ -19,7 +19,8 @@
         ],
         "classmap": [
             "app/classes",
-            "database/classes"
+            "database/classes",
+            "database/models"
         ]
     }
 }
