@@ -7,3 +7,4 @@ $app->add(new \Slim\Middleware\Session([
     'autorefresh' => true,
     'lifetime' => '20 min',
 ]));
+
