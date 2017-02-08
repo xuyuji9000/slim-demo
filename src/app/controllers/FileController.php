@@ -13,9 +13,9 @@ class FileController extends HomeController {
         // var_export(User::first());
         
         // User::create(['name' => 'Mary']);
-        var_export(User::first()->toArray());
+        // var_export(User::first()->toArray());
 
-        // $response->getBody()->write('This is Home!');
+        $response->getBody()->write('This is Home!');
 
         // test logger
         // $this->container->logger->err("Something interesting happened");
