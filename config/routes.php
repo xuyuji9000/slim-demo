@@ -5,14 +5,14 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 $app->get('/home', App\Controllers\FileController::class.':home');
 
-$app->get('/json', function(){
-    header("Content-Type: application/json");
+$app->get('/json', function($request, $response, $args){
+    // header("Content-Type: application/json");
+    // header('Access-Control-Allow-Origin: *');
     $result = [
         'one'=>1,
         'three'=>3,
         'five'=>5
     ];
-
-    echo json_encode($result);
-    exit;
+    $response = $response->withJson($result);
+    return $response;
 });
