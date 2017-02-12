@@ -10,6 +10,10 @@ class DatabaseFactory
         switch($database)
         {
             case 'mysql': {
+                $dsn = "mysql:host=".getenv("HOST").";dbname=".getenv("DATABASE").";charset=".getenv("CHARSET");
+                $user = getenv("USERNAME");
+                $pass = getenv("PASSWORD");
+                return new PDO($dsn, $user, $pass);
                 break;
             }
             case 'sqlite': {
